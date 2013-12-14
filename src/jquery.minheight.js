@@ -1,4 +1,6 @@
-﻿!function(window){
+﻿//= require vendor/jquery.backstretch
+
+!function(window){
     var MinHeight = function(element,index,options){
         var self = this;
         this.fireEvent = function(eventHandler,event){
@@ -17,7 +19,7 @@
         this.initialize = function(options){
             if (options){
                 if(options["ppMinheightOptions"])
-                    jQuery.extend(true, this.options, options["data-pp-minheight-options"]);
+                    jQuery.extend(true, this.options, options["ppMinheightOptions"]);
                 else
                     jQuery.extend(true, this.options, options);
             }
@@ -28,6 +30,7 @@
         };
         this.setHeight = function(){
             topHeight = 0;
+            console.log(this.options.substractTopHeight);
             if(this.options.substractTopHeight){
                 topHeight = this.$element.offset().top;
             };
@@ -62,4 +65,3 @@
         });
     });
 }(window);
-
