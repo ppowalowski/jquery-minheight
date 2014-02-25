@@ -1,5 +1,3 @@
-﻿//= require vendor/jquery.backstretch
-
 !function(window){
     var MinHeight = function(element,index,options){
         var self = this;
