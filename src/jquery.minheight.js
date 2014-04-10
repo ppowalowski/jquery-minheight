@@ -34,9 +34,9 @@
                 topHeight = this.$element.offset().top;
             };
             var height = parseInt(jQuery(window).height())-parseInt(topHeight);
+            height = height*(this.options.relativeHeight/100);
             if (height < this.options.minHeight)
                 height = this.options.minHeight;
-            height = height*(this.options.relativeHeight/100);
             this.$element.css({
                 'min-height':height+'px'
             });
