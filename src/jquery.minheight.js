@@ -12,7 +12,8 @@
         };
         this.options = {
             'substractTopHeight':true,
-            'minHeight':400
+            'minHeight':400,
+            'relativeHeight':80
         };
         this.initialize = function(options){
             if (options){
@@ -35,6 +36,7 @@
             var height = parseInt(jQuery(window).height())-parseInt(topHeight);
             if (height < this.options.minHeight)
                 height = this.options.minHeight;
+            height = height*(this.options.relativeHeight/100);
             this.$element.css({
                 'min-height':height+'px'
             });
