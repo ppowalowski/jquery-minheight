@@ -13,7 +13,8 @@
         this.options = {
             'substractTopHeight':true,
             'minHeight':400,
-            'relativeHeight':80
+            'relativeHeight':80,
+            'fixedHeight':true
         };
         this.initialize = function(options){
             if (options){
@@ -37,9 +38,10 @@
             height = height*(this.options.relativeHeight/100);
             if (height < this.options.minHeight)
                 height = this.options.minHeight;
-            this.$element.css({
-                'min-height':height+'px'
-            });
+            var heightAttribute = this.options.fixedHeight? 'height':'min-height';
+            var css = {};
+            css[heightAttribute] = height+'px';
+            this.$element.css(css);
         };
         this.attachEvents = function(){
             var self = this;
