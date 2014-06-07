@@ -30,7 +30,6 @@
         };
         this.setHeight = function(){
             topHeight = 0;
-            console.log(this.options.substractTopHeight);
             if(this.options.substractTopHeight){
                 topHeight = this.$element.offset().top;
             };
